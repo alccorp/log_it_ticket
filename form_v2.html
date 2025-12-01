@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALC IT Ticket Form</title>
+    <style>
+        body, html {
+            /* FIX 1: Removed height: 100% which forces unnecessary expansion */
+            margin: 0;
+            padding: 0; 
+            min-height: 100px; /* Minimum space for content */
+            overflow: hidden; /* FIX 2: Prevents internal scrollbars */
+            
+            /* Ensures button is positioned at the very top */
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start; 
+            
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+            /* Small padding at the top and bottom to frame the button */
+            padding-top: 15px; 
+            padding-bottom: 15px;
+        }
+        .it-button {
+            /* Style the button */
+            background-color: #2A57AF; 
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px #1a3873;
+            transition: all 0.1s ease;
+            width: 90%; 
+            height: auto;
+        }
+        .it-button:hover {
+            background-color: #1a3873;
+        }
+        .it-button:active {
+            background-color: #1a3873;
+            box-shadow: 0 1px #1a3873;
+            transform: translateY(3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="it-button" onclick="openForm()">
+            Log a New ALC IT Ticket
+        </button>
+    </div>
+
+    <script>
+        function openForm() {
+            var formUrl = "https://forms.office.com/Pages/ResponsePage.aspx?id=b5PJkgLoOUe0buuYzJtq8pmCi448c9xNqFBc5OiPkmhUNEFXTzhXQVcwSkU5WThZM1dSOTg3RlZQNy4u";
+            window.open(formUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
