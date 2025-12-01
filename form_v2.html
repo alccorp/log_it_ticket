@@ -2,15 +2,15 @@
 <html>
 <head>
     <title>ALC IT Ticket Form</title>
+    <!-- CRITICAL: Office.js must be included -->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     <style>
         body, html {
-            /* FIX 1: Removed height: 100% which forces unnecessary expansion */
             margin: 0;
             padding: 0; 
-            min-height: 100px; /* Minimum space for content */
-            overflow: hidden; /* FIX 2: Prevents internal scrollbars */
+            min-height: 100px;
+            overflow: hidden;
             
-            /* Ensures button is positioned at the very top */
             display: flex;
             justify-content: center; 
             align-items: flex-start; 
@@ -21,12 +21,10 @@
         .container {
             width: 100%;
             text-align: center;
-            /* Small padding at the top and bottom to frame the button */
             padding-top: 15px; 
             padding-bottom: 15px;
         }
         .it-button {
-            /* Style the button */
             background-color: #2A57AF; 
             color: white;
             padding: 15px 30px;
@@ -51,6 +49,11 @@
             box-shadow: 0 1px #1a3873;
             transform: translateY(3px);
         }
+        /* Optional: Show loading state */
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -59,8 +62,18 @@
             Log a New ALC IT Ticket
         </button>
     </div>
-
     <script>
+        // CRITICAL: Initialize Office.js
+        Office.onReady(function(info) {
+            // Add-in is now ready
+            console.log("Office add-in initialized successfully");
+            console.log("Host: " + info.host); // Will show "Outlook"
+            console.log("Platform: " + info.platform); // Will show "OfficeOnline"
+            
+            // Remove loading state if you added one
+            document.body.classList.remove('loading');
+        });
+
         function openForm() {
             var formUrl = "https://forms.office.com/Pages/ResponsePage.aspx?id=b5PJkgLoOUe0buuYzJtq8pmCi448c9xNqFBc5OiPkmhUNEFXTzhXQVcwSkU5WThZM1dSOTg3RlZQNy4u";
             window.open(formUrl, '_blank');
