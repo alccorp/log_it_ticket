@@ -6,17 +6,19 @@
         body, html {
             height: 100%;
             margin: 0;
-            /* Center the button in the task pane */
+            padding: 0;
+            /* FIX: Changed flex properties to align content at the top */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Keep horizontal center */
+            align-items: flex-start; /* START at the top of the pane */
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
-            padding: 20px;
         }
         .container {
             width: 100%;
             text-align: center;
+            /* Add padding to the top so the button isn't right against the pane edge */
+            padding-top: 20px; 
         }
         .it-button {
             /* Style the button */
@@ -33,7 +35,7 @@
             cursor: pointer;
             box-shadow: 0 4px #1a3873;
             transition: all 0.1s ease;
-            width: 90%; /* Fills most of the task pane width */
+            width: 90%; 
         }
         .it-button:hover {
             background-color: #1a3873;
