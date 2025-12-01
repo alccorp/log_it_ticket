@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IT Ticket Form</title>
+    <title>ALC IT Ticket Form</title>
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevents double scrollbars */
+            margin: 0;
+            /* Center the button in the task pane */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
         }
-        iframe {
+        .container {
             width: 100%;
-            height: 100vh; /* Forces iframe to fill the height of the window */
+            text-align: center;
+        }
+        .it-button {
+            /* Style the button */
+            background-color: #2A57AF; 
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
             border: none;
+            cursor: pointer;
+            box-shadow: 0 4px #1a3873;
+            transition: all 0.1s ease;
+            width: 90%; /* Fills most of the task pane width */
+        }
+        .it-button:hover {
+            background-color: #1a3873;
+        }
+        .it-button:active {
+            background-color: #1a3873;
+            box-shadow: 0 1px #1a3873;
+            transform: translateY(3px);
         }
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://forms.office.com/Pages/ResponsePage.aspx?id=b5PJkgLoOUe0buuYzJtq8pmCi448c9xNqFBc5OiPkmhUNEFXTzhXQVcwSkU5WThZM1dSOTg3RlZQNy4u&embed=true" 
-        allowfullscreen 
-        webkitallowfullscreen 
-        mozallowfullscreen 
-        msallowfullscreen>
-    </iframe>
+    <div class="container">
+        <button class="it-button" onclick="openForm()">
+            Log a New ALC IT Ticket
+        </button>
+    </div>
+
+    <script>
+        function openForm() {
+            // The Forms URL
+            var formUrl = "https://forms.office.com/Pages/ResponsePage.aspx?id=b5PJkgLoOUe0buuYzJtq8pmCi448c9xNqFBc5OiPkmhUNEFXTzhXQVcwSkU5WThZM1dSOTg3RlZQNy4u";
+            
+            // This opens the URL in a new browser tab
+            window.open(formUrl, '_blank');
+        }
+    </script>
 </body>
 </html>
